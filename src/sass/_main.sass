@@ -1,0 +1,233 @@
+.out
+	margin: 0 auto 
+	min-width: 1500px*0.75
+.section
+	position: relative
+	&__inner
+		width: 1460px*0.75
+		margin: 0 auto
+		position: relative
+		+clr
+.top
+	background-color: #17436B
+	background-image: -moz-linear-gradient(72deg, #12478F 20%, #E93232 80%)
+	background-image: -o-linear-gradient(72deg, #12478F 20%, #E93232 80%)
+	background-image: -webkit-linear-gradient(72deg, #12478F 20%, #E93232 80%)
+	background-image: linear-gradient(18deg, #12478F 20%, #E93232 80%)
+	// +cover
+	+clr
+	padding: 50px*0.75 0 0 
+	&:before
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		background: url(../img/service-bg.png) repeat-x center bottom
+		height: 198px
+		content: "" 
+	&__bg		
+		background: url(../img/dots-n-lines.png) repeat-x bottom center
+	&__phone
+		float: right
+		width: 556px*0.75
+		margin-bottom: -70px
+		img
+			width: 341px*0.75
+	&__heading
+		color: #fff 
+		padding: 120px*0.75 100px*0.75 0
+		max-width: 725px*0.75
+		h1, h2
+			line-height: 1.1
+		h1
+			font-size: 70px*0.75
+		h2
+			font-size: 50px*0.75
+			strong
+				+med
+.logo
+	width: 110px*0.75
+	display: inline-block
+	vertical-align: top
+	margin: 11px*0.75 0 0 
+	img
+		width: 100%
+		
+.services
+	background: url(../img/section-bg.png) no-repeat bottom left
+	padding-bottom: 65px*0.75
+	&:before
+		content: ""
+		position: absolute
+		top: 20px
+		right: 0
+		+s(section-bg-top)
+	h3
+		max-width: 800px*0.75
+		
+.service
+	font-size: 0
+	text-align: center
+	width: 1059px*0.75 
+	margin: 0 auto
+	padding: 50px*0.75 0 0 
+	li
+		display: inline-block
+		vertical-align: top
+		width: 333px*0.75
+		+light
+		font-size: 26px*0.75
+		line-height: 1.15
+		color: #3e3e3e
+		margin: 0 10px*0.75 35px*0.75
+	&__icon
+		height: 70px*0.75
+		+vertical
+		margin-bottom: 16px*0.75
+		i
+			display: inline-block
+			vertical-align: bottom
+			&.is-new
+				+s(is-new)
+			&.is-contacts
+				+s(is-contacts)
+			&.is-piggy
+				+s(is-piggy)
+			&.is-coins
+				+s(is-coins)
+			&.is-phone
+				+s(is-phone)
+			&.is-cash
+				+s(is-cash)
+			&.is-chat
+				+s(is-chat)
+			&.is-love
+				+s(is-love)
+
+//steps
+.steps
+	background-image: -moz-linear-gradient(72deg, #E93232 0%, #12478F 50%)
+	background-image: -o-linear-gradient(72deg, #E93232 0%, #12478F 50%)
+	background-image: -webkit-linear-gradient(72deg, #E93232 0%, #12478F 50%)
+	background-image: linear-gradient(18deg, #E93232 0%, #12478F 50%)
+	+box-shadow(inset 0 2px 0 rgba(255, 114, 134, 0.59))
+	text-align: center
+	&__bg
+		padding: 50px*0.75 0 60px*0.75 
+		background: url(../img/steps-bg.png) repeat-x bottom center
+	h3
+		color: #fff
+		width: 920px*0.75
+		margin: 0 auto
+	&__wrap
+		font-size: 0
+		padding: 60px*0.75 0 0
+.step
+	display: inline-block
+	vertical-align: top
+	text-align: left
+	margin-bottom: 100px*0.75
+	+clr
+	min-height: 90px 
+	&_one
+		width: 420px*0.75
+		.step__number
+			width: 50px 
+	&_two
+		width: 330px*0.75
+		.step__number
+			width: 70px 
+	&_three
+		width: 390px*0.75
+		.step__number
+			width: 70px 
+	&_four
+		width: 320px*0.75 
+		.step__number
+			width: 70px 
+	&__number
+		float: left
+		+thin
+		font-size: 151px*0.75
+		line-height: 0.75
+		color: #fff
+		padding: 2px 0 0 
+		border-right: 1px solid #fff 
+		margin: 0 20px*0.75 0 0 
+	p
+		color: #fff 
+		overflow: hidden
+		padding: 0 8px 0 0 
+		
+//partners
+.partners
+	background: #fff
+	text-align: center
+	padding: 50px*0.75 0 80px*0.75
+	overflow: hidden
+	&__wrap
+		font-size: 0
+		margin: 0 -17px*0.75 
+.partner
+	display: inline-block
+	vertical-align: top
+	width: 33.3%
+	padding: 20px*0.75 17px*0.75
+	+box
+	text-align: left
+	&:first-child
+		.partner__text
+			&:before
+				display: none
+	&__logo
+		height: 120px*0.75
+		+vertical
+		margin: 0 auto 30px*0.75
+		&.is-ipsp
+			width: 187px*0.75
+		&.is-pilot
+			width: 216px*0.75
+		&.is-wallet
+			width: 99px*0.75
+		img
+			vertical-align: bottom
+			width: 100%
+	&__text
+		position: relative
+		&:before
+			content: "" 
+			background-color: #264587
+			background-image: -moz-linear-gradient(72deg, #E93232 0%, #12478F 100%)
+			background-image: -o-linear-gradient(72deg, #E93232 0%, #12478F 100%)
+			background-image: -webkit-linear-gradient(72deg, #E93232 0%, #12478F 100%)
+			background-image: linear-gradient(18deg, #E93232 0%, #12478F 100%)
+			+box-shadow(inset 0 2px 0 rgba(255, 114, 134, 0.59))
+			position: absolute
+			top: 0
+			bottom: 0
+			left: -17px*0.75 
+			width: 1px
+			
+//join
+.join
+	text-align: center
+	padding: 60px*0.75 0 86px*0.75
+	background: url(../img/join-bg.png) no-repeat center top #f7f7f7 
+	h3
+		margin-bottom: 40px*0.75
+	&:after
+		content: "" 
+		background-image: -moz-linear-gradient(49deg, #E93232 0%, #12478F 10%)
+		background-image: -o-linear-gradient(49deg, #E93232 0%, #12478F 10%)
+		background-image: -webkit-linear-gradient(49deg, #E93232 0%, #12478F 10%)
+		background-image: linear-gradient(41deg, #E93232 0%, #12478F 10%)
+		height: 12px*0.75
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+.form
+	width: 620px*0.75
+	margin: 0 auto
+	.input, .textarea
+		margin-bottom: 20px*0.75 

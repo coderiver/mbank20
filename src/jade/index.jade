@@ -1,0 +1,127 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title MBank
+		meta(name="viewport" content="width=640, initial-scale=1.6")
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet" media="all" href="css/screen.css")
+		<!--[if IE]><script src="bower/html5shiv/dist/html5shiv.js"></script><![endif]-->
+
+	body
+		//begin out
+		.out
+			//begin top
+			.section.top
+				.top__bg
+					.section__inner
+						a(href="#").logo
+							img(src="img/logo.svg", alt="")
+						.top__phone 
+							img(src="img/top-phone.png", alt="")
+						.top__heading
+							h1 BEST Wallet для банков 
+							h2 Платежный инструмент, который 
+								strong приносит доход!
+			//begin services
+			.section.services
+				.section__inner
+					h3 Ваш банк получает возможность в рамках платежной системы БЭСТ 
+						strong совершенно бесплатно 
+						| выпускать собственные электронные кошельки BEST Wallet для Вас, 
+						strong что дает:
+					ul.service
+						li
+							.service__icon
+								i.is-new
+							.service__text Новый инновационный продукт для Ваших клиентов
+
+						li
+							.service__icon
+								i.is-contacts
+							.service__text Привлечение новых клиентов, ранее не пользовавшихся банковскими продуктами
+
+						li
+							.service__icon
+								i.is-piggy
+							.service__text Комиссионный доход от каждой операции
+
+						li
+							.service__icon
+								i.is-coins
+							.service__text Кросс-продажи услуг банка
+						li
+							.service__icon
+								i.is-phone
+							.service__text Бесплатно Ваше мобильное приложение в Apple store
+						li
+							.service__icon
+								i.is-cash
+							.service__text Привлечение бесплатных остатков пользователей
+						li
+							.service__icon
+								i.is-chat
+							.service__text Возможность оповещения Ваших клиентов о новинках банка
+						li
+							.service__icon
+								i.is-love
+							.service__text Увеличение лояльности клиентов
+
+			//begin steps
+			.section.steps
+				.steps__bg
+					.section__inner
+						h3 Простая интеграция в 4 шага:
+						.steps__wrap
+							.step.step_one
+								.step__number 1
+								p Вступите в платежную систему БЭСТ, получив доходы ещё и от денежных переводов, в том числе с возможностью выдачи в банкоматах
+							.step.step_two
+								.step__number 2
+								p Подпишите договор на обслуживание МБанк
+							.step.step_three
+								.step__number 3
+								p Согласуйте форму финансовой выгрузки кошельков по итогам дня
+							.step.step_four
+								.step__number 4
+								p Предоставьте свой логотип и другую маркетинговую информацию
+						h3 После этих шагов вы получите доступ в личном кабинете и появитесь в списке банков-партнеров на сайте и в приложении пользователя, где пользователи выбирают расчетный банк при регистрации
+			
+			//begin partners
+			.section.partners
+				.section__inner
+					h3 Возможности расширенной интеграции
+					.partners__wrap
+						.partner
+							.partner__logo.is-ipsp
+								img(src="img/ipsp.png", alt="")
+							.partner__text
+								p Станьте нашим банком-экваером. 
+								p Интегрируйтесь в наш процессинг IPSP и предлагайте уникальные условия клиентам.
+						.partner
+							.partner__logo.is-pilot
+								img(src="img/pilot.png", alt="")
+							.partner__text
+								p Создайте свой сервис.
+								p Подписав договор с компанией КредитПилот, вы получите возможность создавать свои сервисы, например дайте возможность клиентам гасить кредиты в кошельке и на более чем 20 000 терминалах нашей сети и сократите очереди на кассах
+
+						.partner
+							.partner__logo.is-wallet
+								img(src="img/wallet.png", alt="")
+							.partner__text
+								p Создайте свой сервис. 
+								p Подписав договор с компанией КредитПилот, вы получите возможность создавать свои сервисы, например дайте возможность клиентам гасить кредиты в кошельке и на более чем 20 000 терминалах нашей сети и сократите очереди на кассах
+			
+			//begin join
+			.section.join
+				.join__bg
+					h3 Присоединяйтесь!
+					.form
+						form(action="")
+							input(type="text" placeholder="Имя/номер телефона").input
+							input(type="text" placeholder="Название компании").input
+							textarea(name="", cols="30", rows="10" placeholder="Текст письма").textarea
+							button.submit Отправить письмо
+
+		//load scripts
+		script(src="js/lib/head.js" data-headjs-load="js/init.js")
