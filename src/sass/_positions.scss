@@ -1,0 +1,103 @@
+//map for left figure elements
+$leftElements: (
+  from-best-wallet:  (elTop: 113, elRight: 996, lineTop: -37, lineLeft: 20, marX: 29, marY: -20),
+  from-card:         (elTop: 162, elRight: 773, lineTop:  14, lineLeft: 10, marX: 14, marY:  -6),
+  from-best:         (elTop: 248, elRight: 859, lineTop: -24, lineLeft: 22, marX: 26, marY: -20),
+  from-credit-pilot: (elTop: 412, elRight: 939, lineTop: -58, lineLeft: 21, marX: 26, marY: -20),
+);
+
+$leftElementsMobile: (
+  from-best-wallet:  (elTop: 126, elRight: 146, lineTop: 31, lineLeft:  -40, marX: 29, marY: -20),
+  from-card:         (elTop: 279, elRight: 119, lineTop: 71, lineLeft: -109, marX: 64, marY:  67),
+  from-best:         (elTop: 212, elRight: 347, lineTop: 31, lineLeft:   20, marX: 26, marY: -20),
+  from-credit-pilot: (elTop:  90, elRight: 400, lineTop: 76, lineLeft: -154, marX: 70, marY:  92),
+);
+
+// from-best-wallet:  (elTop:  84, elRight: 213, lineTop: 31, lineLeft:  -40, marX: 29, marY: -20),
+// from-card:         (elTop: 253, elRight: 162, lineTop: 71, lineLeft: -109, marX: 64, marY:  67),
+
+
+//map for right figure elements
+$rightElements: (
+  to-best-wallet: (elTop:  -9, elLeft:  823, lineTop:   20, lineRight: 34, marX: 30, marY: -20),
+  to-best:        (elTop:  61, elLeft:  821, lineTop:   20, lineRight: 34, marX: 24, marY: -20),
+  to-wallet-one:  (elTop:  78, elLeft: 1029, lineTop:   32, lineRight: 32, marX: 32, marY: -18),
+  to-sberbank:    (elTop: 138, elLeft:  837, lineTop:   49, lineRight: 22, marX: 45, marY: -11),
+  to-yandex:      (elTop: 179, elLeft: 1009, lineTop:   20, lineRight: 25, marX: 22, marY: -12),
+  to-card:        (elTop: 256, elLeft:  943, lineTop:   25, lineRight: 20, marX: 47, marY:  -6),
+  to-card-rf:     (elTop: 336, elLeft:  800, lineTop:    2, lineRight: 20, marX: 46, marY:  -6),
+  to-webmoney:    (elTop: 486, elLeft:  841, lineTop: -123, lineRight: 33, marX: 19, marY: -19),
+);
+
+$rightElementsMobile: (
+  to-best-wallet: (elTop: 696, elLeft: 537, lineTop: -147, lineRight:   13, marX:  30, marY: -20),
+  to-best:        (elTop: 745, elLeft: 432, lineTop: -151, lineRight:  -13, marX: -19, marY:  12),
+  to-wallet-one:  (elTop: 900, elLeft: 436, lineTop: -253, lineRight:   23, marX:  32, marY: -18),
+  to-sberbank:    (elTop: 752, elLeft: 301, lineTop: -124, lineRight:  -38, marX:  -7, marY:  46),
+  to-yandex:      (elTop: 926, elLeft: 267, lineTop: -299, lineRight:  -60, marX: -11, marY:  61),
+  to-card:        (elTop: 859, elLeft: 156, lineTop: -239, lineRight:  -96, marX:  -2, marY:  77),
+  to-card-rf:     (elTop: 731, elLeft: 116, lineTop: -136, lineRight:  -73, marX: -19, marY:  33),
+  to-webmoney:    (elTop: 755, elLeft:   0, lineTop: -198, lineRight: -161, marX: -13, marY:  25),
+);
+
+@each $el, $map in $leftElements {
+  .#{$el} {
+    top: map-get($map, elTop)+px;
+    right: map-get($map, elRight)+px;
+    .line {
+      top: map-get($map, lineTop)+px;
+      margin-left: map-get($map, lineLeft)+px;
+    }
+    .el__marker {
+      top: map-get($map, marX)+px;
+      right: map-get($map, marY)+px;
+    }
+  }
+}
+
+@each $el, $map in $rightElements {
+  .#{$el} {
+    top: map-get($map, elTop)+px;
+    left: map-get($map, elLeft)+px;
+    .line {
+      top: map-get($map, lineTop)+px;
+      margin-right: map-get($map, lineRight)+px;
+    }
+    .el__marker {
+      top: map-get($map, marX)+px;
+      left: map-get($map, marY)+px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  @each $el, $map in $leftElementsMobile {
+    .#{$el} {
+      top: map-get($map, elTop)+px;
+      right: map-get($map, elRight)+px;
+      .line {
+        top: map-get($map, lineTop)+px;
+        margin-left: map-get($map, lineLeft)+px;
+      }
+      .el__marker {
+        top: map-get($map, marX)+px;
+        right: map-get($map, marY)+px;
+      }
+    }
+  }
+
+  @each $el, $map in $rightElementsMobile {
+    .#{$el} {
+      top: map-get($map, elTop)+px;
+      left: map-get($map, elLeft)+px;
+      .line {
+        top: map-get($map, lineTop)+px;
+        margin-right: map-get($map, lineRight)+px;
+      }
+      .el__marker {
+        top: map-get($map, marX)+px;
+        left: map-get($map, marY)+px;
+      }
+    }
+  }
+}

@@ -1,132 +1,120 @@
-// # SHORT HOWTO
-// ## Sprites
-//     .whatever
-//          +sized-sprite($icons, coderiver) //or
-// 			+s(codedby) //gets default value for spritemap as $icons
-// ### animation example
-//     +include keyframes(rotate)
-//        from
-//           +rotate(0)
-//        to
-//           +rotate(360)
-// ## animation usage
-//     body:hover
-// 	    +animation(rotate 200s linear infinite)
-// ## animations easing, see easings.net for full list and examples, tnx @ai
-//     transition: all 1.2s ceaser($ease-in)
-// ## gradient example
-//     +background-image(linear-gradient(#232323, #5c5c5c));
-//     +g(#232323, #5c5c5c);
-//	   horizontal
-//     +gh(#232323, #5c5c5c);
-// ## making bw-images
-//     img
-//			@extend %gray
-// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
-//     +min-screen(320)
-//			display: none
-// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
-//
-// ## use cycles
-//     @for $i from 1 through 3
-//       .item-#{$i}
-//			width: 2em * $i;
-//     @each $s in a,b,c
-// 	    	#{$s}
-//				display: none
-// ## fonts 
-// Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
-// =book
-// 	font-family: "book", Arial, sans-serif 
-// insert pics into css
-// div
-// 	+pic("blabla.png")
-// span
-// 	+png(blabla)
-// p
-// 	+jpg(bla)
++font("bender", bender)
++font("bender_bold", bender_bold)
++font("bender_light", bender_light)
++font("bender_italic", bender_italic)
++font("bender_bold_italic", bender_bold_italic)
++font("proxima_nova", proxima_nova)
++font("proxima_nova_bold", proxima_nova_bold)
++font("proxima_nova_light", proxima_nova_light)
++font("als_rubl", als_rubl)
+
+=bender
+  font-family: "bender", Helvetica, Arial, sans-serif
+  font-weight: normal
+=bender-b
+  font-family: "bender_bold", Helvetica, Arial, sans-serif
+  font-weight: normal
+=bender-l
+  font-family: "bender_light", Helvetica, Arial, sans-serif
+  font-weight: normal
+=bender-i
+  font-family: "bender_italic", Helvetica, Arial, sans-serif
+  font-weight: normal
+=bender-b-i
+  font-family: "bender_bold_italic", Helvetica, Arial, sans-serif
+  font-weight: normal
+=proxima
+  font-family: "proxima_nova", Helvetica, Arial, sans-serif
+=proxima-b
+  font-family: "proxima_nova_bold", Helvetica, Arial, sans-serif
+  font-weight: normal
+=proxima-l
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif
+  font-weight: normal
+=rubl
+  font-family: "als_rubl"
+  font-weight: normal
+  text-transform: none !important
+
+//break point
+=bp
+  +r(1000)
+    @content
+
+.show-on-mobile
+  +rmin(1000)
+    display: none !important
 
 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
-	line-height: 1.4
+  font-family: "proxima_nova", Arial, sans-serif
+  font-size: 12px
+  line-height: 1.4
+  color: #FFF
+  background-color: #231A43
+  background-image: linear-gradient(28deg, #221745 0%, #511C51 100%)
+  min-width: 640px
+  b, strong
+    +proxima-b
+
+.out
+  overflow: hidden
 
 
-//fonts
-+font("HelveticaNeueCyr-Thin", HelveticaNeueCyr-Thin)
-+font("HelveticaNeueCyr-Light", HelveticaNeueCyr-Light)
-+font("HelveticaNeueCyr-LightItalic", HelveticaNeueCyr-LightItalic)
-+font("HelveticaNeueCyr-Roman", HelveticaNeueCyr-Roman)
-+font("HelveticaNeueCyr-Medium", HelveticaNeueCyr-Medium)
+=bp
+  +r(1000)
+    @content
 
-=thin
-	font-family: "HelveticaNeueCyr-Thin", Helvetica, sans-serif
-=light
-	font-family: "HelveticaNeueCyr-Light", Helvetica, sans-serif
-=lightitalic
-	font-family: "HelveticaNeueCyr-LightItalic", Helvetica, sans-serif
-=reg
-	font-family: "HelveticaNeueCyr-Roman", Helvetica, sans-serif
-=med
-	font-family: "HelveticaNeueCyr-Medium", Helvetica, sans-serif
-	
+.hide-on-mobile
+  +rmin(1000)
+    display: none
 
-//
-h1, h2, h3, h4, h5, h6, strong, b
-	font-weight: normal
-	
-h1, h2
-	+thin
-	line-height: 1.1
-h3
-	font-size: 30px*0.75
-	+light
-	line-height: 1.16
-	color: #3e3e3e   
-	strong
-		+med
 
-p
-	+light
-	font-size: 22px*0.75
-	line-height: 1.1
-	color: #3e3e3e 
+.icon
+  display: inline-block
 
-.input, .textarea
-	+light
-	font-size: 22px*0.75
-	color: #3e3e3e
-	line-height: 1.1
-	border: 1px solid rgba(201, 201, 201, 0.5)
-	background: #fff 
-	resize: none
-	width: 100%
-	padding: 21px*0.75 29px*0.75 16px*0.75
-	+box 
-	+placeholder
-		+lightitalic
-		+opacity(0.5)
-	&:focus
-		border-color: rgba(201, 201, 201, 1) 
+@each $s in satellite,money,coins,shield,phone,best-wallet,best-wallet,best,sberbank,credit-pilot,webmoney,visa-master,wallet-one,yandex,best-white,ipsp,app-store
+  .icon-#{$s}
+    +s(#{$s})
 
-.submit
-	width: 99%
-	padding: 28px*0.75 20px*0.75 30px*0.75 
-	+box
-	+reg
-	font-size: 30px*0.75
-	line-height: 1
-	color: #fff
-	background-color: #F3F3F3
-	background-image: -moz-linear-gradient(228deg, #E93232 0%, #12478F 50%)
-	background-image: -o-linear-gradient(228deg, #E93232 0%, #12478F 50%)
-	background-image: -webkit-linear-gradient(228deg, #E93232 0%, #12478F 50%)
-	background-image: linear-gradient(222deg, #E93232 0%, #12478F 50%)
-	+box-shadow(inset 0 -2px 0 rgba(255, 114, 134, 0.59))
-	position: relative
-	&:active
-		top: 1px
-		+box-shadow(inset 0 -1px 0 rgba(255, 114, 134, 0.59))
-		
+.line
+  display: inline-block
+
+@each $s in best-wallet,best,card,credit-pilot
+  .from-#{$s}
+    .line
+      +s(from-#{$s}, $lines)
+    &.is-active
+      .line
+        +si(from-#{$s}-red, $lines)
+    +bp
+      .line
+        +s(from-#{$s}, $lines-mobile)
+      &.is-active
+        .line
+          +si(from-#{$s}-red, $lines-mobile)
+
+@each $s in best-wallet,best,wallet-one,sberbank,yandex,card,card-rf,webmoney
+  .to-#{$s}
+    .line
+      +s(to-#{$s}, $lines)
+    &.is-active
+      .line
+        +si(to-#{$s}-red, $lines)
+    +bp
+      .line
+        +s(to-#{$s}, $lines-mobile)
+      &.is-active
+        .line
+          +si(to-#{$s}-red, $lines-mobile)
+
+.reference
+  position: fixed
+  z-index: 6
+  //top: 36%
+  right: 0px
+  bottom: 30px
+  //margin-top: -29px
+  +s(reference)
+  +tr(all 0.2s linear)
+

@@ -1,0 +1,141 @@
+// +font("bender", bender)
+// +font("bender_bold", bender_bold)
+// +font("bender_light", bender_light)
+// +font("bender_italic", bender_italic)
+// +font("bender_bold_italic", bender_bold_italic)
++font("proxima_nova", proxima_nova)
++font("proxima_nova_bold", proxima_nova_bold)
++font("proxima_nova_light", proxima_nova_light)
++font("als_rubl", als_rubl)
+
+// =bender
+//   font-family: "bender", Helvetica, Arial, sans-serif
+//   font-weight: normal
+// =bender-b
+//   font-family: "bender_bold", Helvetica, Arial, sans-serif
+//   font-weight: normal
+// =bender-l
+//   font-family: "bender_light", Helvetica, Arial, sans-serif
+//   font-weight: normal
+// =bender-i
+//   font-family: "bender_italic", Helvetica, Arial, sans-serif
+//   font-weight: normal
+// =bender-b-i
+//   font-family: "bender_bold_italic", Helvetica, Arial, sans-serif
+//   font-weight: normal
+=proxima
+  font-family: "proxima_nova", Helvetica, Arial, sans-serif
+=proxima-b
+  font-family: "proxima_nova_bold", Helvetica, Arial, sans-serif
+  font-weight: normal
+=proxima-l
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif
+  font-weight: normal
+=rubl
+  font-family: "als_rubl"
+  font-weight: normal
+  text-transform: none !important
+
+//break point
+=bp
+  +r(1000)
+    @content
+
+.show-on-mobile
+  +rmin(1000)
+    display: none !important
+
+body
+  position: relative
+  font-family: "proxima_nova", Arial, sans-serif
+  font-size: 12px
+  line-height: 1.4
+  color: #FFF
+  background-color: #231A43
+  background-image: linear-gradient(28deg, #221745 0%, #511C51 100%)
+  min-width: 640px
+  b, strong
+    +proxima-b
+
+.out
+  overflow: hidden
+  position: relative
+
+.icon
+  display: inline-block
+
+@each $s in satellite,money,coins,shield,phone,best-wallet,best-wallet,best,sberbank,credit-pilot,webmoney,visa-master,wallet-one,yandex,best-footer,ipsp,app-store-red
+  .icon-#{$s}
+    +s(#{$s}, $icons-simple)
+
+.line
+  display: inline-block
+
+@each $s in best-wallet,best,card,credit-pilot
+  .from-#{$s}
+    .line
+      +s(from-#{$s}, $lines)
+    &.is-active
+      .line
+        +si(from-#{$s}-red, $lines)
+    +bp
+      .line
+        +s(from-#{$s}, $lines-mobile)
+      &.is-active
+        .line
+          +si(from-#{$s}-red, $lines-mobile)
+
+@each $s in best-wallet,best,wallet-one,sberbank,yandex,card,card-rf,webmoney
+  .to-#{$s}
+    .line
+      +s(to-#{$s}, $lines)
+    &.is-active
+      .line
+        +si(to-#{$s}-red, $lines)
+    +bp
+      .line
+        +s(to-#{$s}, $lines-mobile)
+      &.is-active
+        .line
+          +si(to-#{$s}-red, $lines-mobile)
+
+.reference
+  position: fixed
+  z-index: 6
+  bottom: 20px
+  //right: 38px
+  right: 0
+  width: 43px
+  height: 59px
+  margin-top: -29px
+  +s(reference, $icons-simple)
+  +tr(all 0.2s linear)
+  +bp
+    right: 0
+    &:before
+      content: ""
+      position: absolute
+      bottom: 100%
+      right: 0
+      +arr(10,10,#F95923,bl)
+
+.dots
+  position: fixed
+  z-index: 6
+  top: 50%
+  right: 40px
+  transform: translateY(-50%)
+  li
+    margin-top: 11px
+    width: 9px
+    height: 9px
+    border: 2px solid #C7575B
+    border-radius: 50%
+    +tr(all 0.1s linear)
+    cursor: pointer
+    &:hover, &:focus, &.is-active
+      background: #C7575B
+    &:first-child
+      margin-top: 0
+  +bp
+    display: none

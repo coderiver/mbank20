@@ -1,0 +1,195 @@
+$BaseFontSize: 45px
+
+.flip-text
+  display: block
+  font-size: 0
+  font-size: $BaseFontSize
+  white-space: nowrap
+  user-select: none
+  &:after
+    content: ""
+    display: table
+    width: 100%
+    clear: both
+  &.no-animate
+    .char__top,
+    .char__bottom,
+    .char__top:after,
+    .char__bottom:after
+      animation: none
+
+  $charwidth: 1.044em //=47px/basefontsize
+  $charheight: 1.555em //=70px/basefontsize
+  $dur: 0.4s
+  $easing: linear
+  $repeating: infinite
+  $radius: 4px
+
+  .char
+    // display: inline-block
+    // vertical-align: middle
+    display: block
+    float: left
+    position: relative
+    height: $charheight
+    line-height: $charheight
+    width: $charwidth
+    margin-left: 0.244em //11px
+    border-radius: $radius
+    background: rgb(112, 46, 115)
+    background-image: linear-gradient( to top, rgb(81,33,84) 0%, rgb(148,61,152) 100%)
+    box-shadow: 0px 1px 1px 0px rgba(8, 22, 43, 0.5), 0 0.111em 0 0 #442049
+    color: #FFF
+    font-size: 1em
+    text-align: center
+    text-transform: uppercase
+    perspective: 200px
+    &:first-child
+      margin-left: 0
+    &:before
+      content: ""
+      position: absolute
+      top: 50%
+      margin-top: -1px
+      left: 0
+      right: 0
+      height: 0
+      border-top: 1px solid rgba(0,0,0,0.2)
+      border-bottom: 1px solid rgba(255,255,255,0.05)
+    &.is-animate
+      .char__top
+        animation: flip-char-top $dur $easing $repeating
+        &:after
+          animation: to-bottom $dur $easing $repeating
+      .char__bottom
+        animation: flip-char-bottom $dur $easing $repeating
+        &:after
+          animation: to-top $dur $easing $repeating
+
+
+  .char__top,
+  .char__bottom
+    position: absolute
+    z-index: 2
+    left: 0
+    right: 0
+    overflow: hidden
+    transform-style: preserve-3d
+    backface-visibility: hidden
+    background-color: rgb(112, 46, 115)
+    &:before
+      content: ""
+      position: absolute
+      z-index: 2
+      left: 0
+      right: 0
+      height: 1px
+    &:after
+      content: ""
+      position: absolute
+      z-index: 1
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(0,0,0,0.7)
+      opacity: 0
+    span
+      position: absolute
+      left: 0
+      right: 0
+      width: $charwidth
+      height: $charheight
+
+  .char__top
+    top: 0
+    bottom: 50%
+    border-top-left-radius: $radius
+    border-top-right-radius: $radius
+    transform-origin: left bottom 0
+    transform: rotateX(0deg)
+    // animation: flip-char-top $dur $easing $repeating
+    background-image: linear-gradient( to top, rgb(81,33,84) -100%, rgb(148,61,152) 100%)
+    &:before
+      bottom: 0
+      background: rgba(0,0,0,0.2)
+    span
+      top: 0
+    &:after
+      // animation: to-bottom $dur $easing $repeating
+      border-top-left-radius: $radius
+      border-top-right-radius: $radius
+      border-top: 0px solid rgba(255,255,255,0.4)
+
+
+  .char__bottom
+    top: 50%
+    bottom: 0
+    border-bottom-left-radius: $radius
+    border-bottom-right-radius: $radius
+    transform-origin: left top 0
+    transform: rotateX(90deg)
+    // animation: flip-char-bottom $dur $easing $repeating
+    background-image: linear-gradient( to top, rgb(81,33,84) 0%, rgb(148,61,152) 200%)
+    span
+      bottom: 0
+      background: rgba(255,255,255,0.05)
+    &:before
+      top: 0
+    &:after
+      // animation: to-top $dur $easing $repeating
+      border-bottom-left-radius: $radius
+      border-bottom-right-radius: $radius
+      border-bottom: 0px solid rgba(255,255,255,0.4)
+
+
+// animations
+@keyframes flip-char-top
+  0%
+    transform: rotateX(0deg)
+    visibility: visible
+  50%, 99%
+    transform: rotateX(-90deg)
+  100%
+    transform: rotateX(-90deg)
+    visibility: hidden
+
+@keyframes flip-char-bottom
+  0%, 50%
+    transform: rotateX(90deg)
+    visibility: visible
+  99%
+    transform: rotateX(0deg)
+  100%
+    transform: rotateX(0deg)
+    visibility: hidden
+
+@keyframes to-bottom
+  from
+    opacity: 0
+    border-top-width: 0
+  to
+    opacity: 1
+    border-top-width: 5px
+
+@keyframes to-top
+  from
+    opacity: 1
+    border-bottom-width: 5px
+  to
+    opacity: 0
+    border-bottom-width: 0
+
+// animation delay for each char
+// @for $i from 1 to 15
+//   $delay: random(100)/40 + s
+//   .char:nth-child(#{$i})
+//     .char__top
+//       animation-delay: ($delay)
+//       &:after
+//         animation-delay: ($delay)
+//   .char:nth-child(#{$i})
+//     .char__bottom
+//       animation-delay: ($delay)
+//       &:after
+//         animation-delay: ($delay)

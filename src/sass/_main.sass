@@ -1,233 +1,552 @@
-.out
-	margin: 0 auto 
-	min-width: 1500px*0.75
-.section
+.header
 	position: relative
-	&__inner
-		width: 1460px*0.75
-		margin: 0 auto
+	z-index: 4
+	padding: 46px*0.75 0 97px*0.75
+	background-image: url('../img/header-bg.png')
+	background-repeat: no-repeat
+	color: #FFF
+	background-position: 50% 100%
+	background-size: cover
+	.l
 		position: relative
-		+clr
-.top
-	background-color: #17436B
-	background-image: -moz-linear-gradient(72deg, #12478F 20%, #E93232 80%)
-	background-image: -o-linear-gradient(72deg, #12478F 20%, #E93232 80%)
-	background-image: -webkit-linear-gradient(72deg, #12478F 20%, #E93232 80%)
-	background-image: linear-gradient(18deg, #12478F 20%, #E93232 80%)
-	// +cover
+	+bp
+		background-image: url('../img/header-bg.svg')
+		padding-top: 30px*0.75
+
+.header__top
+	margin-bottom: 119px*0.75
 	+clr
-	padding: 50px*0.75 0 0 
-	&:before
-		position: absolute
-		bottom: 0
-		left: 0
-		right: 0
-		background: url(../img/service-bg.png) repeat-x center bottom
-		height: 198px
-		content: "" 
-	&__bg		
-		background: url(../img/dots-n-lines.png) repeat-x bottom center
-	&__phone
-		float: right
-		width: 556px*0.75
-		margin-bottom: -70px
-		img
-			width: 341px*0.75
-	&__heading
-		color: #fff 
-		padding: 120px*0.75 100px*0.75 0
-		max-width: 725px*0.75
-		h1, h2
-			line-height: 1.1
-		h1
-			font-size: 70px*0.75
-		h2
-			font-size: 50px*0.75
-			strong
-				+med
+	+bp
+		margin-bottom: 60px*0.75
+
+.header__top-right
+	float: right
+	+bp
+		float: none
+		text-align: center
+		position: relative
+		margin-bottom: 25px*0.75
+
+.header__main
+	width: percentage(695/1170)
+	+r(1100)
+		width: 55%
+	+bp
+		width: auto
+
 .logo
-	width: 110px*0.75
-	display: inline-block
-	vertical-align: top
-	margin: 11px*0.75 0 0 
+	margin: auto
+	width: 133px*0.75
 	img
 		width: 100%
-		
-.services
-	background: url(../img/section-bg.png) no-repeat bottom left
-	padding-bottom: 65px*0.75
+
+.menu
+	display: inline-block
+	vertical-align: middle
+	font-size: 21px*0.75
+	line-height: 1.2
+	color: #fff
+	+bender-l
+	li
+		display: inline-block
+		vertical-align: middle
+		margin-right: 20px*0.75
+		&:last-child
+			margin-right: 0
+	a
+		color: inherit
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	b
+		+bender-b
+
+.lang
+	display: inline-block
+	vertical-align: middle
+	margin-left: 20px*0.75
+	position: relative
+	padding: 7px 5px
+	color: #FFF
+	font-size: 21px0.75
+	line-height: 1
+	+bender-b
+	text-transform: uppercase
+	text-decoration: none
+	border: 2px solid #fff
 	&:before
 		content: ""
 		position: absolute
-		top: 20px
+		top: 100%
+		left: 50%
+		+arr(12,6,#fff,b)
+		margin: 2px 0 0 -6px
+	+bp
+		position: absolute
+		top: -5px
 		right: 0
-		+s(section-bg-top)
-	h3
-		max-width: 800px*0.75
-		
-.service
-	font-size: 0
+
+.capabilities
+	+bender
+	font-size: 22px*0.75
+	line-height: 1.4
+	li
+		display: table
+		table-layout: fixed
+		width: 100%
+		min-height: 50px*0.75
+		margin-top: 19px*0.75
+		margin-top: 0.836em*0.75
+		&:first-child
+			margin-top: 0
+		small
+			display: block
+	+bp
+		text-align: center
+		li
+			display: inline-block
+			vertical-align: top
+			width: percentage(200/1170)
+			min-width: 165px*0.75
+			padding: 0 5px*0.75
+			margin: 0 0 15px*0.75 0
+
+.capabilities__icon
+	display: table-cell
+	vertical-align: middle
 	text-align: center
-	width: 1059px*0.75 
-	margin: 0 auto
-	padding: 50px*0.75 0 0 
+	width: 50px*0.75
+	.icon
+		vertical-align: middle
+		-webkit-transform: scale(0.75) 
+		-moz-transform: scale(0.75) 
+		-ms-transform: scale(0.75) 
+		-o-transform: scale(0.75) 
+		transform: scale(0.75) 
+	+bp
+		display: block
+		width: auto
+		height: 60px
+
+.capabilities__text
+	display: table-cell
+	vertical-align: middle
+	padding-left: 25px*0.75
+	+bp
+		display: block
+		padding-left: 0
+		line-height: 1.1
+
+.phone-container
+	position: absolute
+	top: 195px
+	// right: percentage(-60/1170)
+	right: 0
+	// width: 565px
+	// height: 998px
+	width: 452px*0.75
+	height: 798px*0.75
+	&:after
+		content: ""
+		position: absolute
+		z-index: 1
+		// width: 1453px
+		// height: 1193px
+		width: 1162px
+		height: 954px
+		// top: -242px
+		// right: -317px
+		top: -194px
+		right: -254px
+		background: url("../img/phone-shadow.png") no-repeat
+		pointer-events: none
+	+bp
+		position: relative
+		top: 0
+		right: 0
+		margin: auto
+
+.phone
+	position: relative
+	// width: 565px
+	// height: 998px
+	// width: 424px
+	// height: 749px
+	width: 452px*0.75
+	height: 798px*0.75
+	z-index: 2
+	background: url("../img/phone-bg.png") no-repeat
+	-webkit-background-size: contain 
+	-o-background-size: contain 
+	background-size: contain 
+	// +tr(all 0.3s ease)
+
+.phone__inner
+	position: absolute
+	z-index: 2
+
+	$width: 314px*0.75
+	$height: 558px*0.75
+
+	top: 79px*0.75
+	left: 69px*0.75
+	width: 314px*0.75
+	height: 558px*0.75
+	background: black
+	overflow: hidden
+
+	iframe
+		width: $width
+		height: $height
+
+.refill
+	position: relative
+	z-index: 1
+	margin-top: -190px*0.75
+	padding: 357px*0.75 0 340px*0.75
+	min-height: 484px*0.75
+	background: url("../img/intro-bg.jpg") no-repeat 50% 0
+	background-size: cover
+	+bp
+		min-height: 0
+		padding-top: 240px*0.75
+	a,
+	a:visited
+		color: white
+		text-decoration: none
+	li
+		small
+			display: block
+			font-size: 18px*0.75
+
+.services
+	position: relative
+	z-index: 2
+	margin: -340px*0.75 0 -334px*0.75
+	padding: 370px*0.75 0 200px*0.75
+	min-height: 520px*0.75
+	background: url("../img/shop-bg.png") no-repeat 50% 0
+	background-size: 100% 100%
+	+bp
+		min-height: 0
+		padding: 230px*0.75 0 150px*0.75
+
+.transfers
+	padding: 485px*0.75 0 167px*0.75
+	min-height: 485px*0.75
+	background: url("../img/transfers-bg.jpg") no-repeat 50% 100%
+	background-size: cover
+	+bp
+		min-height: 0
+		padding: 430px*0.75 0 110px*0.75
+	ul
+		font-size: smaller
+
+.rates
+	position: relative
+	padding: 92px*0.75 0 168px*0.75
+	.text
+		width: auto
+		padding: 0 percentage(100/1170)
+		text-align: center
+
+.security
+	position: relative
+	padding: 60px*0.75 0
+	min-height: 770px*0.75
+	z-index: 1
+	overflow: hidden
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		opacity: 0.54
+		background-color: #221436
+		background-image: linear-gradient(40deg, rgba(25, 14, 37, 0.49) 0%, rgba(52, 25, 74, 0.49) 100%)
+		box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.05)
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		width: percentage(925/1800)
+		background: url("../img/smoke.png") no-repeat 0 50%
+		background-size: cover
+	.l
+		position: relative
+		z-index: 2
+	.text
+		padding-left: percentage(695/1170)
+		width: auto
+	+bp
+		padding-bottom: 20px
+		&:after
+			top: auto
+			height: 50%
+			width: 100%
+			background-size: 100% auto
+		.text
+			padding-left: 0
+
+.security__left
+	position: absolute
+	top: 50%
+	right: percentage(830/1800)
+	width: 795px*0.75
+	height: 745px*0.75
+	margin-top: -372px*0.75
+	background: url("../img/security.png") no-repeat 50% 50%
+	-webkit-background-size: contain 
+	-o-background-size: contain 
+	background-size: contain 
+	+bp
+		position: relative
+		z-index: 2
+		top: 0
+		right: 0
+		width: auto
+		height: auto
+		padding-bottom: percentage(745/795)
+		margin: 10px 40px 0
+		box-sizing: border-box
+		background-size: 100% auto
+
+.security__right
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	width: percentage(875/1800)
+	background-color: #3E103B
+	opacity: 0.46
+	+bp
+		display: none
+
+
+.text
+	width: percentage(695/1170)
+	font-size: 24px*0.75 //29
+	line-height: 1.15
+	> ul, > ul > li, > p
+		margin: 29px*0.75 0
+		&:first-child
+			margin-top: 0
+		&:last-child
+			margin-bottom: 0
+	b, strong
+		+proxima-b
+	+r(1100)
+		width: 55%
+	+bp
+		width: auto
+		> ul > li
+			position: relative
+			padding-left: 50px
+			&:before
+				content: ""
+				position: absolute
+				top: 50%
+				left: 0
+				margin-top: -12px
+				+s(checkmark)
+
+.title-head
+	font-size: 48px*0.75 //60
+	line-height: 1.25
+	margin-bottom: 60px*0.75
+	+bender-i
+	strong, b
+		+bender-b-i
+	+bp
+		font-size: 50px*0.75
+		text-align: center
+
+.title
+	+bender-b-i
+	font-size: 40px*0.75 //50
+	line-height: 1.1
+
+
+.figure-text
+	display: block
+	margin: 84px*0.75 0 -18px*0.75
+	width: percentage(500/1170)
+	font-size: 21px*0.75
+	line-height: 1.1
+	position: relative
+	+bender-i
+	b, strong
+		+bender-b-i
+	+bp
+		width: auto
+		text-align: center
+		padding: 0 20px*0.75
+
+
+.tooltip-wrap
+	position: relative
+
+.tooltip
+	position: absolute
+	display: inline-block
+	top: 100%
+	left: 27px*0.75
+	margin-top: 26px*0.75
+	padding: 19px*0.75 15px*0.75
+	box-sizing: border-box
+	max-width: 510px*0.75
+	background: #e1275a
+	+bender-i
+	font-size: 20px*0.75 //21
+	line-height: 1.2
+	strong, b
+		+bender-b-i
+	&:before
+		content: ""
+		position: absolute
+		right: percentage(24/510)
+		bottom: 100%
+		+arr(17,11,#e1275a,br)
+	+bp
+		max-width: percentage(238/590)
+		left: -30px
+		margin-top: 0
+	+r(700)
+		top: -50px
+
+.tooltip__value
+	display: block
+
+
+.contacts
+	color: #FFF
+	a
+		text-decoration: none
+		color: inherit
+
+.contacts__title
+	display: block
+
+
+.footer
+	position: relative
+	padding: 80px 0 105px
+	text-align: center
+	+bp
+		padding-bottom: 40px
+
+.footer__logos
+	// margin: 20px 0
+	margin: 0 0 16px*0.75
+	.icon
+		vertical-align: middle
+		margin-right: 35px*0.75
+		text-decoration: none
+		&:last-child
+			margin-right: 0
+
+.footer__copy
+	display: block
+	margin: 23px*0.75 0
+	font-size: 21px*0.75
+	+bender
+
+.footer__links
+	color: #ec2845
+	font-size: 21px*0.75
+	+bender
 	li
 		display: inline-block
-		vertical-align: top
-		width: 333px*0.75
-		+light
-		font-size: 26px*0.75
-		line-height: 1.15
-		color: #3e3e3e
-		margin: 0 10px*0.75 35px*0.75
-	&__icon
-		height: 70px*0.75
-		+vertical
-		margin-bottom: 16px*0.75
-		i
-			display: inline-block
-			vertical-align: bottom
-			&.is-new
-				+s(is-new)
-			&.is-contacts
-				+s(is-contacts)
-			&.is-piggy
-				+s(is-piggy)
-			&.is-coins
-				+s(is-coins)
-			&.is-phone
-				+s(is-phone)
-			&.is-cash
-				+s(is-cash)
-			&.is-chat
-				+s(is-chat)
-			&.is-love
-				+s(is-love)
+		margin-right: 40px*0.75
+		&:last-child
+			margin-right: 0
+	a
+		text-decoration: none
+		color: inherit
+		&:hover
+			text-decoration: underline
+	+bp
+		font-size: 17px*0.75
+		li
+			margin-right: 15px*0.75
+			&:last-child
+				margin-right: 0
 
-//steps
-.steps
-	background-image: -moz-linear-gradient(72deg, #E93232 0%, #12478F 50%)
-	background-image: -o-linear-gradient(72deg, #E93232 0%, #12478F 50%)
-	background-image: -webkit-linear-gradient(72deg, #E93232 0%, #12478F 50%)
-	background-image: linear-gradient(18deg, #E93232 0%, #12478F 50%)
-	+box-shadow(inset 0 2px 0 rgba(255, 114, 134, 0.59))
-	text-align: center
-	&__bg
-		padding: 50px*0.75 0 60px*0.75 
-		background: url(../img/steps-bg.png) repeat-x bottom center
-	h3
-		color: #fff
-		width: 920px*0.75
-		margin: 0 auto
-	&__wrap
-		font-size: 0
-		padding: 60px*0.75 0 0
-.step
-	display: inline-block
-	vertical-align: top
-	text-align: left
-	margin-bottom: 100px*0.75
+
+.app-store
+	display: block
+	// margin: 0 auto 34px
+	margin: 0 auto 28px
+	+s(app-store)
+.bottom-area
+	position: relative
+	z-index: 5
+	background-color: #231A43
+	// background-color: #221745
+	background-image: linear-gradient(28deg, #221745 0%, #511C51 215%)
+
+.counter
 	+clr
-	min-height: 90px 
-	&_one
-		width: 420px*0.75
-		.step__number
-			width: 50px 
-	&_two
-		width: 330px*0.75
-		.step__number
-			width: 70px 
-	&_three
-		width: 390px*0.75
-		.step__number
-			width: 70px 
-	&_four
-		width: 320px*0.75 
-		.step__number
-			width: 70px 
-	&__number
-		float: left
-		+thin
-		font-size: 151px*0.75
-		line-height: 0.75
-		color: #fff
-		padding: 2px 0 0 
-		border-right: 1px solid #fff 
-		margin: 0 20px*0.75 0 0 
-	p
-		color: #fff 
-		overflow: hidden
-		padding: 0 8px 0 0 
-		
-//partners
-.partners
-	background: #fff
-	text-align: center
-	padding: 50px*0.75 0 80px*0.75
-	overflow: hidden
-	&__wrap
+	.flip-text
+		display: inline-block
+		vertical-align: top
+		margin-right: 0.089em*0.75 //4px
+		font-size: 40px*0.75
+	input, .js-input-flip-text
+		display: block
+		width: 0
+		height: 0
 		font-size: 0
-		margin: 0 -17px*0.75 
-.partner
-	display: inline-block
-	vertical-align: top
-	width: 33.3%
-	padding: 20px*0.75 17px*0.75
-	+box
-	text-align: left
-	&:first-child
-		.partner__text
-			&:before
-				display: none
-	&__logo
-		height: 120px*0.75
-		+vertical
-		margin: 0 auto 30px*0.75
-		&.is-ipsp
-			width: 187px*0.75
-		&.is-pilot
-			width: 216px*0.75
-		&.is-wallet
-			width: 99px*0.75
-		img
-			vertical-align: bottom
-			width: 100%
-	&__text
-		position: relative
-		&:before
-			content: "" 
-			background-color: #264587
-			background-image: -moz-linear-gradient(72deg, #E93232 0%, #12478F 100%)
-			background-image: -o-linear-gradient(72deg, #E93232 0%, #12478F 100%)
-			background-image: -webkit-linear-gradient(72deg, #E93232 0%, #12478F 100%)
-			background-image: linear-gradient(18deg, #E93232 0%, #12478F 100%)
-			+box-shadow(inset 0 2px 0 rgba(255, 114, 134, 0.59))
-			position: absolute
-			top: 0
-			bottom: 0
-			left: -17px*0.75 
-			width: 1px
-			
-//join
-.join
+		visibility: hidden
+		margin: 0
+		padding: 0
+		border: none
+		box-shadow: none
+		outline: none
+	+bp
+		text-align: center
+		.flip-text
+			font-size: 35px*0.75
+
+.counter__title
+	display: block
+	margin-bottom: 10px
+
+.char.rubl
+	+rubl
+	line-height: 1.2em //54px
+	font-size: 1em //42px
+
+.btn
+	display: block
+	margin: auto
+	padding: 31px 35px 29px
+	background-color: #FFF
+	background-image: linear-gradient( 78deg, rgb(236,40,69) 0%, rgb(249,92,115) 100%)
+	box-shadow: -1px 2px 2px 0px rgba(75, 24, 80, 0.11), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.21)
+	+proxima-b
+	font-size: 25px
+	line-height: 1
+	color: #FFF
+	text-decoration: none
+	text-transform: uppercase
 	text-align: center
-	padding: 60px*0.75 0 86px*0.75
-	background: url(../img/join-bg.png) no-repeat center top #f7f7f7 
-	h3
-		margin-bottom: 40px*0.75
-	&:after
-		content: "" 
-		background-image: -moz-linear-gradient(49deg, #E93232 0%, #12478F 10%)
-		background-image: -o-linear-gradient(49deg, #E93232 0%, #12478F 10%)
-		background-image: -webkit-linear-gradient(49deg, #E93232 0%, #12478F 10%)
-		background-image: linear-gradient(41deg, #E93232 0%, #12478F 10%)
-		height: 12px*0.75
-		position: absolute
-		bottom: 0
-		left: 0
-		right: 0
-.form
-	width: 620px*0.75
-	margin: 0 auto
-	.input, .textarea
-		margin-bottom: 20px*0.75
+	.refill &
+		margin-top: 55px
+
+.icon-app-store
+	display: block
+	margin: 50px auto 0
+
+
+.safari
+	.header
+		background-size: 100% 100%
+		+bp
+			background-size: cover
+	.transfers
+		margin-bottom: -1px

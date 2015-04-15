@@ -1,0 +1,8 @@
+/* TEAM */
+Your title: Best Wallet
+Site: support@wallet.best
+Location: Kiev, Ukraine
+
+/* SITE */
+Standards: HTML5, CSS3
+Components: jQuery, AngularJS, Head.js

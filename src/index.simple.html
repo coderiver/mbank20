@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MBank Simple</title>
+    <meta name="viewport" content="width=640, initial-scale=.1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/simple.css"><!--[if IE]><script src="bower/html5shiv/dist/html5shiv.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="background"></div>
+    <!--begin out-->
+    <div class="out">
+      <!--begin header-->
+      <header class="header">
+        <div class="l">
+          <div class="header__right">
+            <ul class="menu">
+              <li><a href="index.html"><b>для клиентов</b></a></li>
+              <li><a href="https://banks.wallet.best">для банков</a></li>
+            </ul>
+            <!--a.lang(href="/ru")-->
+            <!--  | ru-->
+          </div>
+          <div class="logo"><img src="img/icons/logo.png" alt=""></div>
+        </div>
+      </header>
+      <!--end header-->
+      <div class="main-wrap">
+        <div class="main-wrap__white">
+          <!--begin wallet--><a name="features" data-app-route="/sign-in"></a>
+          <section class="section wallet">
+            <div class="l">
+              <div class="wallet__main">
+                <h1 class="title-head">Электронный кошелек<br>денежные переводы<br><strong>без комиссии</strong></h1>
+                <div class="phone-container">
+                  <div class="phone js-phone">
+                    <div class="phone__inner">
+                      <iframe src="http://mobile.mbank.nebo15.me/#/start"></iframe>
+                    </div>
+                  </div>
+                </div>
+                <ul class="capabilities">
+                  <li>
+                    <div class="capabilities__icon"><i class="icon icon-phone"></i></div>
+                    <div class="capabilities__text">Бесплатное пополнение</div>
+                  </li>
+                  <li>
+                    <div class="capabilities__icon"><i class="icon icon-satellite"></i></div>
+                    <div class="capabilities__text">Оплачивайте сервисы<small>Без комиссии</small></div>
+                  </li>
+                  <li>
+                    <div class="capabilities__icon"><i class="icon icon-money"></i></div>
+                    <div class="capabilities__text">Отправляйте деньги близким</div>
+                  </li>
+                  <li>
+                    <div class="capabilities__icon"><i class="icon icon-shield"></i></div>
+                    <div class="capabilities__text">Безопасно и комфортно</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!--end wallet-->
+          <!--begin refill--><a name="refill" data-app-route="/refill/cash"></a>
+          <section class="section refill">
+            <div class="l">
+              <div class="text text_left">
+                <h2 class="title">Бесплатно пополняйте кошелек</h2>
+                <ul>
+                  <li>Картой Visa/MasterCard всех банков России<small>Все что вам нужно сделать - убедиться что ваш банк поддерживает технологию <a href="http://wikipedia.org/wiki/3-D_Secure">3D-Secure</a>!</small></li>
+                  <li>Наличными в тысячах терминалов</li>
+                </ul>
+              </div>
+              <button class="btn show-on-mobile">Попробовать прямо сейчас</button>
+            </div>
+          </section>
+          <!--end refill-->
+          <!--begin services--><a name="services" data-app-route="/services"></a>
+          <section class="section services">
+            <div class="l">
+              <div class="text text_left">
+                <h2 class="title">Оплачивайте сотни сервисов<br>без комиссии</h2>
+                <ul>
+                  <li>Пополняйте баланс сотовых операторов, оплачивайте интернет, телевидение, охранные и коммунальные услуги, телефонию и многое другое.</li>
+                </ul>
+                <div class="counter"><strong class="counter__title">Нам уже доверили</strong>
+                  <div class="flip-text js-flip-text">123456789</div>
+                  <div class="flip-text">
+                    <div class="char rubl">i</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--end services-->
+          <!--begin transfers--><a name="transfers" data-app-route="/send"></a>
+          <section class="section transfers">
+            <div class="l">
+              <div class="text text_left">
+                <h2 class="title">Денежные переводы</h2>
+                <p>Отправляйте или получайте деньги онлайн по номеру телефона:</p>
+                <ul>
+                  <li>На карты Visa и MasterCard</li>
+                  <li>
+                    В другие электронные кошельки:
+                    Яндекс.Деньги, WebMoney или Qiwi
+                  </li>
+                  <li>Наличными в более чем 6338 точек по РФ, и еще 30 884 точек по миру</li>
+                </ul>
+                <p class="js-bottom-point">Дешево — тарифы начинаются с 0,5%</p>
+              </div><a href="#" class="icon icon-app-store-red show-on-mobile"></a>
+            </div>
+          </section>
+          <!--end transfers-->
+          <!--begin rates--><a name="rates" data-app-route="/sign-up"></a>
+          <section class="section rates">
+            <div class="l">
+              <div class="text">
+                <h2 class="title">Сколько стоит транзакция?</h2>
+                <p>Оплата услуг — без комиссии<br>Денежные переводы — от 0 до 5%</p>
+              </div><span class="figure-text">
+                Выберите <b>откуда</b> и <b>куда</b> вы хотите совершить
+                <b>денежный перевод</b>, чтобы узнать стоимость</span>
+              <!--begin figure-->
+              <div class="figure">
+                <div class="figure__center"></div>
+                <ul class="figure__left">
+                  <li class="figure__item from-best-wallet">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="from" data-rate="0" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__text"><span class="el__label">кошелек сети</span><b class="el__name">Best Wallet</b></div>
+                        <div class="el__icon"><i class="icon icon-best-wallet"></i></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="figure__item from-card">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="from" data-rate="0" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__text"><span class="el__label">карты</span><b class="el__name">Visa/MasterCard</b></div>
+                        <div class="el__icon"><i class="icon icon-visa-master"></i></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="figure__item from-best">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="from" data-rate="0" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__text"><span class="el__label">касса участника</span><b class="el__name">ПС БЭСТ</b></div>
+                        <div class="el__icon"><i class="icon icon-best"></i></div>
+                      </div>
+                    </label>
+                  </li>
+                </ul>
+                <ul class="figure__right">
+                  <li class="figure__item to-best-wallet">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="to" data-rate="0" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__icon"><i class="icon icon-best-wallet"></i></div>
+                        <div class="el__text"><span class="el__label">кошелек сети</span><b class="el__name">Best Wallet</b></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="figure__item to-best">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="to" data-rate="3-4.5" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__icon"><i class="icon icon-best"></i></div>
+                        <div class="el__text"><span class="el__label">касса участника</span><b class="el__name">ПС БЭСТ</b></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="figure__item to-sberbank">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="to" data-rate="5" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__text"><span class="el__label">банкомат</span><b class="el__name">Сбербанка</b></div>
+                        <div class="el__icon"><i class="icon icon-sberbank"></i></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="figure__item to-yandex">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="to" data-rate="3" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__icon"><i class="icon icon-yandex"></i></div>
+                        <div class="el__text"><span class="el__label">Электронный кошелек</span><b class="el__name">в Яндекс.Деньги</b></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="figure__item to-card">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="to" data-rate="4" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__icon"><i class="icon icon-visa-master"></i></div>
+                        <div class="el__text"><span class="el__label">карты</span><b class="el__name">Visa/MasterCard<br>по миру</b></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="figure__item to-card-rf">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="to" data-rate="3" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__icon"><i class="icon icon-visa-master"></i></div>
+                        <div class="el__text"><span class="el__label">карты</span><b class="el__name">Visa/MasterCard<br>по России</b></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li class="figure__item to-webmoney">
+                    <div class="line"></div>
+                    <label class="el">
+                      <input type="radio" name="to" data-rate="3" class="el__input"><span class="el__marker"></span>
+                      <div class="el__inner">
+                        <div class="el__icon"><i class="icon icon-webmoney"></i></div>
+                        <div class="el__text"><span class="el__label">Электронный кошелек</span><b class="el__name">в WebMoney</b></div>
+                      </div>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <!--end figure-->
+              <div class="tooltip-wrap">
+                <div class="tooltip"><span class="tooltip__value">Комиссия 1,5%</span><strong>На 1000 рублей комиссия составит 15 рублей</strong></div>
+              </div>
+            </div>
+          </section>
+          <!--end rates-->
+          <!--begin security--><a name="security"></a>
+          <section class="section security">
+            <div class="l">
+              <div class="text">
+                <h2 class="title">Безопасно и комфортно</h2>
+                <ul>
+                  <li>Все ваши средства застрахованы - в случае закрытия банка-партнера мы обязуемся возместить вам всю сумму остатков на балансе другого кошелька сети Best Wallet.</li>
+                  <li>Блокировка при помощи PIN-кода и отпечатка пальца</li>
+                  <li>Продукт сертифицирован PCI DSS Level 1</li>
+                  <li>Для передачи данных применяется высоконадежное SSL-шифрование</li>
+                  <div class="contacts"><strong class="contacts__title">Поддержка через <a href="#support" class="show-support-chat">онлайн чат</a> или</strong>
+                    <ul class="contacts__list">
+                      <li><a href="mailto:support@wallet.best">email: support@wallet.best</a></li>
+                      <!--li-->
+                      <!--  a(href="tel:+780956744647")-->
+                      <!--    | Телефон: +7 8095 674 46 47-->
+                    </ul>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!--end security-->
+        </div>
+        <!--begin footer-->
+        <div class="footer"><a href="https://itunes.apple.com/app/id842663242" class="app-store"></a>
+          <div class="l">
+            <div class="footer__logos"><a href="http://bestmt.com" class="icon icon-best-white"></a><a href="http://ipsp.com" class="icon icon-ipsp"></a></div><span class="footer__copy">© ПС БЭСТ, 2014-2015. Все права защищены</span>
+            <ul class="footer__links">
+              <li><a href="/legal/agreement.html">публичная оферта</a></li>
+              <li><a href="/legal/privacy_policy.html">политика конфиденциальности</a></li>
+              <li><a href="#support" class="show-support-chat">служба поддержки</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--end footer-->
+      </div><a href="#support" class="show-support-chat reference"></a>
+      <ul class="dots">
+        <!--li.is-active-->
+        <!--li-->
+        <!--li-->
+        <!--li-->
+        <!--li-->
+        <!--li-->
+      </ul>
+    </div>
+    <!--end out-->
+    <!--load scripts-->
+    <script src="./bower/headjs/dist/1.0.0/head.js" data-headjs-load="js/init.js"></script>
+  </body>
+</html>

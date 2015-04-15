@@ -7,121 +7,351 @@ html
 		meta(name="format-detection" content="telephone=no")
 		link(rel="stylesheet" media="all" href="css/screen.css")
 		<!--[if IE]><script src="bower/html5shiv/dist/html5shiv.js"></script><![endif]-->
-
 	body
+
 		//begin out
 		.out
-			//begin top
-			.section.top
-				.top__bg
-					.section__inner
-						a(href="#").logo
-							img(src="img/logo.svg", alt="")
-						.top__phone 
-							img(src="img/top-phone.png", alt="")
-						.top__heading
-							h1 BEST Wallet для банков 
-							h2 Платежный инструмент, который 
-								strong приносит доход!
+			//begin header
+			a(name="features", data-app-route="/sign-up")
+			header.header
+				.l
+					.header__top
+						.header__top-right
+							ul.menu
+								li
+									a(href="index.html")
+										b для клиентов
+								li
+									a(href="https://banks.wallet.best")
+									| для банков
+
+							//a.lang(href="/ru")
+							//  | ru
+
+						.logo
+							img(src="img/icons/logo.png", alt="")
+
+					.header__main
+						h1.title-head
+							| Электронный кошелек
+							br
+							| Вам больше не нужен банк!
+
+						.phone-container
+							.phone.js-phone
+								.phone__inner
+									iframe(src="http://mobile.mbank.nebo15.me/#/start")
+
+						ul.capabilities
+							li
+								.capabilities__icon
+									i.icon.icon-phone
+								.capabilities__text
+									| Бесплатное пополнение
+							li
+								.capabilities__icon
+									i.icon.icon-satellite
+								.capabilities__text
+									| Оплачивайте сервисы
+									small
+										| Без комиссии
+							li
+								.capabilities__icon
+									i.icon.icon-money
+								.capabilities__text
+									| Отправляйте деньги близким
+							li
+								.capabilities__icon
+									i.icon.icon-shield
+								.capabilities__text
+									| Безопасно и комфортно
+			//end header
+
+			//begin refill
+			a(name="refill", data-app-route="/refill/cash")
+			section.refill
+				.l
+					.text
+						h2.title
+							| Бесплатно пополняйте кошелек
+						ul
+							li
+								| Картой Visa/MasterCard всех банков России
+								small
+									| Все что вам нужно сделать - убедиться что ваш банк поддерживает технологию <a href="http://wikipedia.org/wiki/3-D_Secure">3D-Secure</a>!
+							li
+								| Наличными в тысячах терминалов
+
+					button.btn.show-on-mobile
+						| Попробовать прямо сейчас
+			//end refill
+
 			//begin services
-			.section.services
-				.section__inner
-					h3 Ваш банк получает возможность в рамках платежной системы БЭСТ 
-						strong совершенно бесплатно 
-						| выпускать собственные электронные кошельки BEST Wallet для Вас, 
-						strong что дает:
-					ul.service
-						li
-							.service__icon
-								i.is-new
-							.service__text Новый инновационный продукт для Ваших клиентов
+			a(name="services", data-app-route="/services")
+			section.services
+				.l
+					.text
+						h2.title
+							| Оплачивайте сотни сервисов
+							br
+							| без комиссии
+						ul
+							li
+								| Пополняйте баланс сотовых операторов, оплачивайте интернет, телевидение, охранные и коммунальные услуги, телефонию и многое другое.
 
-						li
-							.service__icon
-								i.is-contacts
-							.service__text Привлечение новых клиентов, ранее не пользовавшихся банковскими продуктами
+						.counter
+							strong.counter__title Транзакций обработано:
+							// В сутки: 161290, начало - Июнь 2014 г.
+							.flip-text.js-flip-text
+								| 36000000
+							.flip-text
+								.char.rubl
+									| i
+			//end services
 
-						li
-							.service__icon
-								i.is-piggy
-							.service__text Комиссионный доход от каждой операции
+			//begin transfers
+			a(name="transfers", data-app-route="/send")
+			section.transfers
+				.l
+					.text
+						h2.title
+							| Денежные переводы
+						p
+							| Отправляйте или получайте деньги онлайн по номеру телефона:
+						ul
+							li
+								| На карты Visa и MasterCard
+							li
+								| В другие электронные кошельки:
+								| Яндекс.Деньги, WebMoney или Qiwi
+							li
+								| Наличными в более чем 6338 точек по РФ, и еще 30 884 точек по миру
+						p.js-bottom-point
+							| Дешево — тарифы начинаются с 0,5%
 
-						li
-							.service__icon
-								i.is-coins
-							.service__text Кросс-продажи услуг банка
-						li
-							.service__icon
-								i.is-phone
-							.service__text Бесплатно Ваше мобильное приложение в Apple store
-						li
-							.service__icon
-								i.is-cash
-							.service__text Привлечение бесплатных остатков пользователей
-						li
-							.service__icon
-								i.is-chat
-							.service__text Возможность оповещения Ваших клиентов о новинках банка
-						li
-							.service__icon
-								i.is-love
-							.service__text Увеличение лояльности клиентов
+					a.icon.icon-app-store.show-on-mobile(href="#")
+			//end transfers
 
-			//begin steps
-			.section.steps
-				.steps__bg
-					.section__inner
-						h3 Простая интеграция в 4 шага:
-						.steps__wrap
-							.step.step_one
-								.step__number 1
-								p Вступите в платежную систему БЭСТ, получив доходы ещё и от денежных переводов, в том числе с возможностью выдачи в банкоматах
-							.step.step_two
-								.step__number 2
-								p Подпишите договор на обслуживание МБанк
-							.step.step_three
-								.step__number 3
-								p Согласуйте форму финансовой выгрузки кошельков по итогам дня
-							.step.step_four
-								.step__number 4
-								p Предоставьте свой логотип и другую маркетинговую информацию
-						h3 После этих шагов вы получите доступ в личном кабинете и появитесь в списке банков-партнеров на сайте и в приложении пользователя, где пользователи выбирают расчетный банк при регистрации
-			
-			//begin partners
-			.section.partners
-				.section__inner
-					h3 Возможности расширенной интеграции
-					.partners__wrap
-						.partner
-							.partner__logo.is-ipsp
-								img(src="img/ipsp.png", alt="")
-							.partner__text
-								p Станьте нашим банком-экваером. 
-								p Интегрируйтесь в наш процессинг IPSP и предлагайте уникальные условия клиентам.
-						.partner
-							.partner__logo.is-pilot
-								img(src="img/pilot.png", alt="")
-							.partner__text
-								p Создайте свой сервис.
-								p Подписав договор с компанией КредитПилот, вы получите возможность создавать свои сервисы, например дайте возможность клиентам гасить кредиты в кошельке и на более чем 20 000 терминалах нашей сети и сократите очереди на кассах
+			.bottom-area
+				//begin rates
+				a(name="rates", data-app-route="/sign-up")
+				section.rates
+					.l
+						.text
+							h2.title
+								| Сколько стоит транзакция?
+							p
+								| Оплата услуг — без комиссии
+								br
+								| Денежные переводы — от 0 до 5%
+						span.figure-text
+							| Выберите <b>откуда</b> и <b>куда</b> вы хотите совершить
+							| <b>денежный перевод</b>, чтобы узнать стоимость
+						//begin figure
+						.figure
+							.figure__center
+							ul.figure__left
+								li.figure__item.from-best-wallet
+									.line
+									label.el
+										input.el__input(type="radio", name="from", data-rate="0")
+										span.el__marker
+										.el__inner
+											.el__text
+												span.el__label
+													| кошелек сети
+												b.el__name
+													| Best Wallet
+											.el__icon
+												i.icon.icon-best-wallet
+								li.figure__item.from-card
+									.line
+									label.el
+										input.el__input(type="radio", name="from", data-rate="0")
+										span.el__marker
+										.el__inner
+											.el__text
+												span.el__label
+													| карты
+												b.el__name
+													| Visa/MasterCard
+											.el__icon
+												i.icon.icon-visa-master
+								li.figure__item.from-best
+									.line
+									label.el
+										input.el__input(type="radio", name="from", data-rate="0")
+										span.el__marker
+										.el__inner
+											.el__text
+												span.el__label
+													| касса участника
+												b.el__name
+													| ПС БЭСТ
+											.el__icon
+												i.icon.icon-best
+							ul.figure__right
+								li.figure__item.to-best-wallet
+									.line
+									label.el
+										input.el__input(type="radio", name="to", data-rate="0")
+										span.el__marker
+										.el__inner
+											.el__icon
+												i.icon.icon-best-wallet
+											.el__text
+												span.el__label
+													| кошелек сети
+												b.el__name
+													| Best Wallet
+								li.figure__item.to-best
+									.line
+									label.el
+										input.el__input(type="radio", name="to", data-rate="3-4.5")
+										span.el__marker
+										.el__inner
+											.el__icon
+												i.icon.icon-best
+											.el__text
+												span.el__label
+													| касса участника
+												b.el__name
+													| ПС БЭСТ
+								li.figure__item.to-sberbank
+									.line
+									label.el
+										input.el__input(type="radio", name="to", data-rate="5")
+										span.el__marker
+										.el__inner
+											.el__text
+												span.el__label
+													| банкомат
+												b.el__name
+													| Сбербанка
+											.el__icon
+												i.icon.icon-sberbank
+								li.figure__item.to-yandex
+									.line
+									label.el
+										input.el__input(type="radio", name="to", data-rate="3")
+										span.el__marker
+										.el__inner
+											.el__icon
+												i.icon.icon-yandex
+											.el__text
+												span.el__label
+													| Электронный кошелек
+												b.el__name
+													| в Яндекс.Деньги
+								li.figure__item.to-card
+									.line
+									label.el
+										input.el__input(type="radio", name="to", data-rate="4")
+										span.el__marker
+										.el__inner
+											.el__icon
+												i.icon.icon-visa-master
+											.el__text
+												span.el__label
+													| карты
+												b.el__name
+													| Visa/MasterCard
+													br
+													| по миру
+								li.figure__item.to-card-rf
+									.line
+									label.el
+										input.el__input(type="radio", name="to", data-rate="3")
+										span.el__marker
+										.el__inner
+											.el__icon
+												i.icon.icon-visa-master
+											.el__text
+												span.el__label
+													| карты
+												b.el__name
+													| Visa/MasterCard
+													br
+													| по России
+								li.figure__item.to-webmoney
+									.line
+									label.el
+										input.el__input(type="radio", name="to", data-rate="3")
+										span.el__marker
+										.el__inner
+											.el__icon
+												i.icon.icon-webmoney
+											.el__text
+												span.el__label
+													| Электронный кошелек
+												b.el__name
+													| в WebMoney
+						//end figure
+						.tooltip-wrap
+							.tooltip
+								span.tooltip__value
+									| Комиссия 1,5%
+								strong
+									| На 1000 рублей комиссия составит 15 рублей
+				//end rates
 
-						.partner
-							.partner__logo.is-wallet
-								img(src="img/wallet.png", alt="")
-							.partner__text
-								p Создайте свой сервис. 
-								p Подписав договор с компанией КредитПилот, вы получите возможность создавать свои сервисы, например дайте возможность клиентам гасить кредиты в кошельке и на более чем 20 000 терминалах нашей сети и сократите очереди на кассах
-			
-			//begin join
-			.section.join
-				.join__bg
-					h3 Присоединяйтесь!
-					.form
-						form(action="")
-							input(type="text" placeholder="Имя/номер телефона").input
-							input(type="text" placeholder="Название компании").input
-							textarea(name="", cols="30", rows="10" placeholder="Текст письма").textarea
-							button.submit Отправить письмо
+				//begin security
+				a(name="security")
+				section.security
+					.l
+						.text
+							h2.title
+								| Безопасно и комфортно
+							ul
+								li
+									| Все ваши средства застрахованы - в случае закрытия банка-партнера мы обязуемся возместить вам всю сумму остатков на балансе другого кошелька сети Best Wallet.
+
+								li
+									| Блокировка при помощи PIN-кода и отпечатка пальца
+
+								li
+									| Продукт сертифицирован PCI DSS Level 1
+
+								li
+									| Для передачи данных применяется высоконадежное SSL-шифрование
+
+								.contacts
+										strong.contacts__title Поддержка через <a href="#support" class="show-support-chat">онлайн чат</a> или
+										ul.contacts__list
+											li
+												a(href="mailto:support@wallet.best")
+													| email: support@wallet.best
+											//li
+											//  a(href="tel:+780956744647")
+											//    | Телефон: +7 8095 674 46 47
+					.security__left
+					.security__right
+				//end security
+
+				//begin footer
+				.footer
+					.l
+						a.app-store(href="https://itunes.apple.com/app/id842663242")
+						.footer__logos
+							a(href="http://bestmt.com").icon.icon-best-white
+							a(href="http://ipsp.com").icon.icon-ipsp
+						span.footer__copy
+							| © ПС БЭСТ, 2014-2015. Все права защищены
+						ul.footer__links
+							li
+								a(href="/legal/agreement.html")
+									| публичная оферта
+							li
+								a(href="/legal/privacy_policy.html")
+									| политика конфиденциальности
+							li
+								a.show-support-chat(href="#support")
+									| служба поддержки
+				//end footer
+
+			a.show-support-chat.reference(href="#support")
+			//ul.dots
+		//end out
 
 		//load scripts
-		script(src="js/lib/head.js" data-headjs-load="js/init.js")
+		script(src="./bower/headjs/dist/1.0.0/head.js" data-headjs-load="js/init.js")

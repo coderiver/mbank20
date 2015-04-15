@@ -1,0 +1,364 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title MBank Simple
+		meta(name="viewport" content="width=640, initial-scale=.1")
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet" media="all" href="css/simple.css")
+		<!--[if IE]><script src="bower/html5shiv/dist/html5shiv.js"></script><![endif]-->
+	body
+
+		.background
+		//begin out
+		.out
+			//begin header
+			header.header
+				.l
+					.header__right
+						ul.menu
+							li
+								a(href="index.html")
+									b для клиентов
+							li
+								a(href="https://banks.wallet.best")
+									| для банков
+
+						//a.lang(href="/ru")
+						//  | ru
+
+					.logo
+						img(src="img/icons/logo.png", alt="")
+			//end header
+
+			.main-wrap
+				.main-wrap__white
+					//begin wallet
+					a(name="features", data-app-route="/sign-in")
+					section.section.wallet
+						.l
+							.wallet__main
+								h1.title-head
+									| Электронный кошелек
+									br
+									| денежные переводы
+									br
+									strong без комиссии
+								.phone-container
+									.phone.js-phone
+										.phone__inner
+											iframe(src="http://mobile.mbank.nebo15.me/#/start")
+
+								ul.capabilities
+									li
+										.capabilities__icon
+											i.icon.icon-phone
+										.capabilities__text
+											| Бесплатное пополнение
+									li
+										.capabilities__icon
+											i.icon.icon-satellite
+										.capabilities__text
+											| Оплачивайте сервисы
+											small
+												| Без комиссии
+									li
+										.capabilities__icon
+											i.icon.icon-money
+										.capabilities__text
+											| Отправляйте деньги близким
+									li
+										.capabilities__icon
+											i.icon.icon-shield
+										.capabilities__text
+											| Безопасно и комфортно
+					//end wallet
+
+					//begin refill
+					a(name="refill", data-app-route="/refill/cash")
+					section.section.refill
+						.l
+							.text.text_left
+								h2.title
+									| Бесплатно пополняйте кошелек
+								ul
+									li
+										| Картой Visa/MasterCard всех банков России
+										small
+											| Все что вам нужно сделать - убедиться что ваш банк поддерживает технологию <a href="http://wikipedia.org/wiki/3-D_Secure">3D-Secure</a>!
+									li
+										| Наличными в тысячах терминалов
+							button.btn.show-on-mobile
+								| Попробовать прямо сейчас
+					//end refill
+
+					//begin services
+					a(name="services", data-app-route="/services")
+					section.section.services
+						.l
+							.text.text_left
+								h2.title
+									| Оплачивайте сотни сервисов
+									br
+									| без комиссии
+								ul
+									li
+										| Пополняйте баланс сотовых операторов, оплачивайте интернет, телевидение, охранные и коммунальные услуги, телефонию и многое другое.
+
+								.counter
+									strong.counter__title Нам уже доверили
+									.flip-text.js-flip-text
+										| 123456789
+									.flip-text
+										.char.rubl
+											| i
+					//end services
+
+					//begin transfers
+					a(name="transfers", data-app-route="/send")
+					section.section.transfers
+						.l
+							.text.text_left
+								h2.title
+									| Денежные переводы
+								p
+									| Отправляйте или получайте деньги онлайн по номеру телефона:
+								ul
+									li
+										| На карты Visa и MasterCard
+									li
+										| В другие электронные кошельки:
+										| Яндекс.Деньги, WebMoney или Qiwi
+									li
+										| Наличными в более чем 6338 точек по РФ, и еще 30 884 точек по миру
+								p.js-bottom-point
+									| Дешево — тарифы начинаются с 0,5%
+							a.icon.icon-app-store-red.show-on-mobile(href="#")
+					//end transfers
+
+					//begin rates
+					a(name="rates", data-app-route="/sign-up")
+					section.section.rates
+						.l
+							.text
+								h2.title
+									| Сколько стоит транзакция?
+								p
+									| Оплата услуг — без комиссии
+									br
+									| Денежные переводы — от 0 до 5%
+							span.figure-text
+								| Выберите <b>откуда</b> и <b>куда</b> вы хотите совершить
+								| <b>денежный перевод</b>, чтобы узнать стоимость
+							//begin figure
+							.figure
+								.figure__center
+								ul.figure__left
+										li.figure__item.from-best-wallet
+											.line
+											label.el
+												input.el__input(type="radio", name="from", data-rate="0")
+												span.el__marker
+												.el__inner
+													.el__text
+														span.el__label
+															| кошелек сети
+														b.el__name
+															| Best Wallet
+													.el__icon
+														i.icon.icon-best-wallet
+										li.figure__item.from-card
+											.line
+											label.el
+												input.el__input(type="radio", name="from", data-rate="0")
+												span.el__marker
+												.el__inner
+													.el__text
+														span.el__label
+															| карты
+														b.el__name
+															| Visa/MasterCard
+													.el__icon
+														i.icon.icon-visa-master
+										li.figure__item.from-best
+											.line
+											label.el
+												input.el__input(type="radio", name="from", data-rate="0")
+												span.el__marker
+												.el__inner
+													.el__text
+														span.el__label
+															| касса участника
+														b.el__name
+															| ПС БЭСТ
+													.el__icon
+														i.icon.icon-best
+								ul.figure__right
+										li.figure__item.to-best-wallet
+											.line
+											label.el
+												input.el__input(type="radio", name="to", data-rate="0")
+												span.el__marker
+												.el__inner
+													.el__icon
+														i.icon.icon-best-wallet
+													.el__text
+														span.el__label
+															| кошелек сети
+														b.el__name
+															| Best Wallet
+										li.figure__item.to-best
+											.line
+											label.el
+												input.el__input(type="radio", name="to", data-rate="3-4.5")
+												span.el__marker
+												.el__inner
+													.el__icon
+														i.icon.icon-best
+													.el__text
+														span.el__label
+															| касса участника
+														b.el__name
+															| ПС БЭСТ
+										li.figure__item.to-sberbank
+											.line
+											label.el
+												input.el__input(type="radio", name="to", data-rate="5")
+												span.el__marker
+												.el__inner
+													.el__text
+														span.el__label
+															| банкомат
+														b.el__name
+															| Сбербанка
+													.el__icon
+														i.icon.icon-sberbank
+										li.figure__item.to-yandex
+											.line
+											label.el
+												input.el__input(type="radio", name="to", data-rate="3")
+												span.el__marker
+												.el__inner
+													.el__icon
+														i.icon.icon-yandex
+													.el__text
+														span.el__label
+															| Электронный кошелек
+														b.el__name
+															| в Яндекс.Деньги
+										li.figure__item.to-card
+											.line
+											label.el
+												input.el__input(type="radio", name="to", data-rate="4")
+												span.el__marker
+												.el__inner
+													.el__icon
+														i.icon.icon-visa-master
+													.el__text
+														span.el__label
+															| карты
+														b.el__name
+															| Visa/MasterCard
+															br
+															| по миру
+										li.figure__item.to-card-rf
+											.line
+											label.el
+												input.el__input(type="radio", name="to", data-rate="3")
+												span.el__marker
+												.el__inner
+													.el__icon
+														i.icon.icon-visa-master
+													.el__text
+														span.el__label
+															| карты
+														b.el__name
+															| Visa/MasterCard
+															br
+															| по России
+										li.figure__item.to-webmoney
+											.line
+											label.el
+												input.el__input(type="radio", name="to", data-rate="3")
+												span.el__marker
+												.el__inner
+													.el__icon
+														i.icon.icon-webmoney
+													.el__text
+														span.el__label
+															| Электронный кошелек
+														b.el__name
+															| в WebMoney
+							//end figure
+							.tooltip-wrap
+								.tooltip
+									span.tooltip__value
+										| Комиссия 1,5%
+									strong
+										| На 1000 рублей комиссия составит 15 рублей
+					//end rates
+
+					//begin security
+					a(name="security")
+					section.section.security
+						.l
+							.text
+								 h2.title
+										| Безопасно и комфортно
+									ul
+										li
+											| Все ваши средства застрахованы - в случае закрытия банка-партнера мы обязуемся возместить вам всю сумму остатков на балансе другого кошелька сети Best Wallet.
+
+										li
+											| Блокировка при помощи PIN-кода и отпечатка пальца
+
+										li
+											| Продукт сертифицирован PCI DSS Level 1
+
+										li
+											| Для передачи данных применяется высоконадежное SSL-шифрование
+
+										.contacts
+												strong.contacts__title Поддержка через <a href="#support" class="show-support-chat">онлайн чат</a> или
+												ul.contacts__list
+													li
+														a(href="mailto:support@wallet.best")
+															| email: support@wallet.best
+													//li
+													//  a(href="tel:+780956744647")
+													//    | Телефон: +7 8095 674 46 47
+					//end security
+
+				//begin footer
+				.footer
+					a.app-store(href="https://itunes.apple.com/app/id842663242")
+					.l
+						.footer__logos
+							a(href="http://bestmt.com").icon.icon-best-white
+							a(href="http://ipsp.com").icon.icon-ipsp
+						span.footer__copy
+							| © ПС БЭСТ, 2014-2015. Все права защищены
+						ul.footer__links
+							li
+								a(href="/legal/agreement.html")
+									| публичная оферта
+							li
+								a(href="/legal/privacy_policy.html")
+									| политика конфиденциальности
+							li
+								a.show-support-chat(href="#support")
+									| служба поддержки
+				//end footer
+
+			a.show-support-chat.reference(href="#support")
+			ul.dots
+				//li.is-active
+				//li
+				//li
+				//li
+				//li
+				//li
+		//end out
+
+		//load scripts
+		script(src="./bower/headjs/dist/1.0.0/head.js" data-headjs-load="js/init.js")

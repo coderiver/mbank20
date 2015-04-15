@@ -1,0 +1,145 @@
+.figure
+  position: relative
+  box-sizing: border-box
+  left: 50%
+  // padding-left: 27px
+  width: 1170px
+  height: 500px
+  +tr(all 0.1s linear)
+  transform-origin: 0% 50%
+  -webkit-transform: translateX(-50%) 
+  -moz-transform: translateX(-50%) 
+  -ms-transform: translateX(-50%) 
+  -o-transform: translateX(-50%) 
+  transform: translateX(-50%) 
+  &.is-mobile
+    transform-origin: 20% 50%
+  +bp
+    width: 590px
+    height: 1000px
+    margin: auto
+    left: 0    
+    -webkit-transform: translateX(0) 
+    -moz-transform: translateX(0) 
+    -ms-transform: translateX(0) 
+    -o-transform: translateX(0) 
+    transform: translateX(0) 
+    .figure__right
+      .el__inner, .el__icon, .el__text
+        display: block
+      .el__text
+        padding: 0
+
+.figure__center
+  position: absolute
+  top: 50%
+  left: 50%
+  margin: -150px 0 0 -150px
+  +s(best-main)
+
+.figure__left
+  float: left
+  .el
+    text-align: right
+  .el__marker
+    top: 50%
+    right: -20px
+    bottom: auto
+    left: auto
+  .line
+    left: 100%
+
+.figure__right
+  float: right
+  .line
+    right: 100%
+
+.figure__item
+  position: absolute
+  .line
+    position: absolute
+    z-index: 1
+
+
+.el
+  display: inline-block
+  position: relative
+  z-index: 2
+  user-select: none
+  cursor: pointer
+  .line
+    position: absolute
+
+.el__input
+  position: absolute
+  opacity: 0
+
+.el__marker
+  position: absolute
+  top: 50%
+  left: -20px
+  width: 10px
+  height: 10px
+  background-color: #59EEDE
+  border-radius: 50%
+  margin: -7px 0 0 -7px
+  &:before
+    content: ""
+    position: absolute
+    top: -2px
+    left: -2px
+    right: -2px
+    bottom: -2px
+    border: 1px solid #59EEDE
+    border-radius: 50%
+  // .el__input:checked + &,
+  .is-active &
+    background-color: #F03081
+    &:before
+      border-color: #F03081
+  .from-card &
+    top: 13px
+    right: -6px
+  .to-sberbank &
+    left: -12px
+    bottom: 5px
+    top: auto
+  .to-yandex
+    left: -12px
+  .to-card &,
+  .to-card-rf &
+    top: auto
+    bottom: 16px
+    left: -8px
+
+.el__inner
+  display: table
+  table-layout: fixed
+  .to-sberbank &
+    display: block
+
+.el__icon
+  display: table-cell
+  vertical-align: middle
+  font-size: 0
+  .to-sberbank &
+    display: block
+
+.el__text
+  display: table-cell
+  vertical-align: middle
+  padding: 0 10px
+  font-size: 16px
+  line-height: 1
+  white-space: nowrap
+  .to-sberbank &
+    display: block
+    padding: 0 0 0 29px
+
+.el__label
+  display: block
+  +proxima-l
+
+.el__name
+  display: block
+  +proxima-b
